@@ -1,13 +1,25 @@
+import { readFileToConsole, createEmptyFile, renameFile, copyFile } from "./basicFileOperation.js";
 import { showCurrentDirectory, moveUp, goToDedicatedfolder, showFolderContent } from "./navigationWorkingDirectory.js";
 
 async function handleInputData(data) {
     data = data.trim();
     const params = data.split(" ");
-    console.log(params[0])
    
     switch (params[0]) {
         case "cat":
-            console.log(params[0]);
+            await readFileToConsole(data.slice(4));
+            break;
+
+        case "add":
+            await createEmptyFile(data.slice(4))
+            break;
+
+        case "rn":
+            await renameFile(data.slice(3))
+            break;
+
+        case "cp":
+            await copyFile(data.slice(3))
             break;
 
         case "up":
@@ -23,6 +35,7 @@ async function handleInputData(data) {
         default:
             throw new Error("Invalid input");
     }
+
     showCurrentDirectory();
 }
 

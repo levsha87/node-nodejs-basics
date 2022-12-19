@@ -18,7 +18,6 @@ function handleError(err) {
     } else {
         console.log("Operation failed");
     }
-      
 }
 
 launchApp();

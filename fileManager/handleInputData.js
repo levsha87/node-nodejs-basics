@@ -39,12 +39,4 @@ async function handleInputData(data) {
     showCurrentDirectory();
 }
 
-
-
-
-
-
-
-
-
 export { handleInputData }
